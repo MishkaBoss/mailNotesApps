@@ -1,6 +1,6 @@
 export default {
     template: `
-        <header class="app-header">
+        <header class="mail-header">
             <div class="logo">
                 <h3>Email M</h3>
             </div>
@@ -8,6 +8,5 @@ export default {
             <input type="text" v-model="txt" /> 
             </nav>
         </header>
-    
     `
 }

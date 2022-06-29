@@ -9,7 +9,8 @@ const options = {
     components: {
         noteApp,
         emailMain
-    },
+
+    }
 }
 
 const app = Vue.createApp(options)
