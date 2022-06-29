@@ -1,7 +1,7 @@
-import {mailService} from './service/mail-service.js'
-import mailHeader from './cmps/mail-header.cmp.js'
-import mailNav from './cmps/mail-nav.cmp.js'
-import mailList from './cmps/mail-list.cmp.js'
+import {mailService} from '../service/mail-service.js'
+import mailHeader from '../cmps/mail-header.cmp.js'
+import mailNav from '../cmps/mail-nav.cmp.js'
+import mailList from '../cmps/mail-list.cmp.js'
 
 
 export default {
