@@ -51,18 +51,19 @@ function _createMails() {
     let mails = utilService.loadFromStorage(MAIL_KEY);
     if (!mails || !mails.length) {
         mails = [];
-        mails.push(_createMail('hi', 'Would love to catch up sometimes', 'frkl@njfl.com'));
-        mails.push(_createMail('bye', 'show all the emails that were', 'ajkl@njl.com'));
-        mails.push(_createMail('love', 'Would love to catch up sometimes', 'ajfl@n4.com'));
-        mails.push(_createMail('mess', 'emailService query function should get a criteria object, here is an idea', 'a2hl@n4.com'));
+        mails.push(_createMail('Yonatan Razel', 'hi', 'Would love to catch up sometimes', 'frkl@njfl.com'));
+        mails.push(_createMail('Ishay Ribo', 'bye', 'show all the emails that were', 'ajkl@njl.com'));
+        mails.push(_createMail('Kanan Ben Ari', 'love', 'Would love to catch up sometimes', 'ajfl@n4.com'));
+        mails.push(_createMail('Shlomo Artzi', 'mess', 'emailService query function should get a criteria object, here is an idea', 'a2hl@n4.com'));
         utilService.saveToStorage(MAIL_KEY, mails);
     }
     return mails;
 }
 
-function _createMail(subject, body, to) {
+function _createMail(fullName, subject, body, to) {
     const mail = {
         id: utilService.makeId(),
+        fullName,
         subject,
         body,
         isRead: false,

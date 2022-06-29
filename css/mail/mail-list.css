@@ -1,0 +1,36 @@
+
+.mail-list ul{
+    list-style: none;
+    margin: 0;
+}
+
+.mail-list li{
+    padding-top: .2em;
+    margin-left: 0;
+    width: 100%;
+    height: 2em;
+    border-bottom: 1px solid lightgray;
+}
+
+.mail-list:link{
+    text-decoration: none;
+}
+
+.mail-preview{
+    display: flex;
+}
+
+.mail-preview .start-line{
+    display: flex;
+    align-items: center;
+    flex-basis: 10em;
+    
+}
+
+.mail-preview .middle-line{
+    flex-grow: 1;
+}
+
+/* .mail-preview .end-line{
+
+} */

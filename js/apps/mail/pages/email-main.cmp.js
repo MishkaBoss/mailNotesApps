@@ -8,11 +8,12 @@ export default {
     template: `
         <section class="mail-app">
             <Header>
-                <mail-header />
+                <mail-header @filtered="setFilter"/>
             </Header>
             <body>
                 <mail-nav />
-                <mail-list :mails="this.mails" />
+                <mail-list :mails="mailsToShow" />
+                <router-view />
             </body>
         </section>
 
@@ -26,10 +27,24 @@ export default {
     data() {
         return {
             mails: null,
-            filterBy: null
+            txt: null
         }
     },
     created() {
         mailService.query().then(mails => this.mails = mails)
     },
+    methods: {
+        setFilter(filter) {
+            this.txt = filter
+        }
+    },
+    computed: {
+        mailsToShow() {
+            let mails = this.mails
+            if (!this.txt) return mails
+                const regex = new RegExp(this.txt, "i")
+                mails = mails.filter((mail) => regex.test(mail.fullName))
+            return mails
+        },
+    }
 };

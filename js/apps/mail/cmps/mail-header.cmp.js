@@ -4,9 +4,17 @@ export default {
             <div class="logo">
                 <h3>Email M</h3>
             </div>
-            <nav class="nav-bar">
-            <input type="text" v-model="txt" /> 
-            </nav>
+            <input type="text" @input="filter" v-model="txt" placeholder="search by mail fullName" /> 
         </header>
-    `
+    `,
+     data() {
+        return {
+            txt: '',
+        }
+    },
+    methods: {
+        filter(){
+            this.$emit('filtered', this.txt)
+        }
+    },
 }

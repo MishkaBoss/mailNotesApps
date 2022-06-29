@@ -1,16 +1,19 @@
+import mailPreview from './mail-preview.cmp.js'
+
 export default {
-    props: ['text'],
+    props: ['mails'],
     template: `
     <section class="mail-list">
-        <h1>list</h1>
-
+        <ul>
+            <li v-for="mail in mails" :key="mail.id" class="mail-preview-container">
+                <router-link to="/email">
+                    <mail-preview :mail="mail" />
+                </router-link>
+            </li>
+        </ul>
     </section>
 `,
-    data() {
-        return {};
-    },
-    created() { },
-    methods: {},
-    computed: {},
-    destroyed() { },
+components: {
+    mailPreview
+},
 };
