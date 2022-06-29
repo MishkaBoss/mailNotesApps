@@ -1,21 +1,35 @@
-// import { router } from './router.js'
-// import appFooter from './cmps/app-footer.cmp.js'
+import {mailService} from './service/mail-service.js'
 import mailHeader from './cmps/mail-header.cmp.js'
-// import userMsg from './cmps/user-msg.cmp.js'
+import mailNav from './cmps/mail-nav.cmp.js'
+import mailList from './cmps/mail-list.cmp.js'
+
 
 export default {
     template: `
-        <section>
-            <mail-header />
-            <!-- <user-msg/>
-            <router-view/>
-            <app-footer /> -->
+        <section class="mail-app">
+            <Header>
+                <mail-header />
+            </Header>
+            <body>
+                <mail-nav />
+                <mail-list :mails="this.mails" />
+            </body>
         </section>
 
     `,
     components: {
         mailHeader,
-        // appFooter,
-        // userMsg
-    }
+        mailNav,
+        mailList,
+        mailService,
+    },
+    data() {
+        return {
+            mails: null,
+            filterBy: null
+        }
+    },
+    created() {
+        mailService.query().then(mails => this.mails = mails)
+    },
 };

@@ -1,1 +1,5 @@
+@import './app/basic.css';
+
+
+@import './mail/mail-app.css';
 @import './mail/mail-header.css';

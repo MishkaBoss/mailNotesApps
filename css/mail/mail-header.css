@@ -1,7 +1,17 @@
-.mail-header{
-    height: 10vh;
-    border-bottom: 1px solid gray;
+.mail-header {
+    border-bottom: 1px solid lightgray;
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.mail-header input {
+    background-color: lightgray;
+    border: 0;
+    border-radius: .5em;
+    padding: .5em;
+}
+
+.mail-header input:focus {
+    border: 0;
 }
