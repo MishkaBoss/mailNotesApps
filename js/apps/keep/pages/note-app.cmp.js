@@ -7,6 +7,7 @@ import { noteService } from '../service/note-service.js'
 export default {
     template: `
 <note-preview/>
+<pre>{{notes}}</pre>
       `,
     data() {
         return {
@@ -16,10 +17,9 @@ export default {
     components: {
         notePreview,
     },
-    // created() {
-    //     noteService.query()
-    //         .then(notes => this.notes = notes)
-    //     console.log(this.notes);
-    //     console.log(`hello from note-app`);
-    // }
+    created() {
+        noteService.query()
+            .then(notes => this.notes = notes)
+        console.log(`hello from note-app`);
+    }
 }
