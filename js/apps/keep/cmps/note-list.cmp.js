@@ -1,6 +1,6 @@
 export default {
     template: `
-<h1>notes-filter</h1>
+<h1>note-list</h1>
 `,
     data() {
         return {

@@ -1,6 +1,7 @@
 export default {
     template: `
-<h1>notes-list</h1>
+<h1>hello</h1>
+
 `,
     data() {
         return {
