@@ -3,10 +3,10 @@
 import mailHeader from './cmps/mail-header.cmp.js'
 // import userMsg from './cmps/user-msg.cmp.js'
 
-const options = {
+export default {
     template: `
         <section>
-            <app-header />
+            <mail-header />
             <!-- <user-msg/>
             <router-view/>
             <app-footer /> -->
@@ -19,8 +19,3 @@ const options = {
         // userMsg
     }
 };
-
-
-const app = Vue.createApp(options)
-// app.use(router)
-app.mount('#app')
