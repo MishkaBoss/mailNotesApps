@@ -1,0 +1,38 @@
+.mail-nav button{
+    border: 0;
+    border-top-right-radius: 1.5em;
+    border-bottom-right-radius: 1.5em;
+    padding: .2em .5em .5em 1em;
+    width: 12em;
+    text-align: start;
+}
+
+.mail-nav button:hover{
+    background-color: lightgray;
+}
+
+.mail-nav button span{
+    font-size: 1.3em;
+    padding-right: .5em;
+}
+
+.mail-nav .add{
+    background-color: rgb(223, 223, 223);
+    border: 0;
+    border-radius: 2em;
+    margin: .5em;
+    width: 9.5em;
+    padding: .2em;
+    font-size: 1em;
+    text-align: center;
+    padding-bottom: .5em;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.mail-nav .add span{
+    color:crimson;
+}
+
+.mail-nav .add:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
