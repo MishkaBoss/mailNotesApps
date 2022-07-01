@@ -4,3 +4,6 @@
 @import './mail/mail-app.css';
 @import './mail/mail-header.css';
 @import './mail/mail-list.css';
+@import './mail/mail-details.css';
+@import './mail/mail-nav.css';
+@import './mail/add-mail.css';

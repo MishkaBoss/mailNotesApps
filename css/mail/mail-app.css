@@ -4,7 +4,7 @@
 }
 
 .mail-app header{
-    background-color: aquamarine;
+    background-color: rgb(244, 244, 244);
     height: 10vh;
 }
 
@@ -14,11 +14,21 @@
 }
 
 .mail-app .mail-nav{
-    background-color: bisque;
-    width: 10em;
+    background-color: rgb(244, 244, 244);
+    width: 15em;
 }
 
 .mail-app .mail-list{
-    background-color: lightgreen;
-    width: 100vw;
+    background-color: rgb(244, 244, 244);
+    width: 100%;
+}
+
+/* .mail-app a:link{
+    
+    color: rgb(152, 56, 56);
+} */
+
+.mail-app a:-webkit-any-link {
+    text-decoration: none;
+    color: rgb(100, 100, 100);
 }

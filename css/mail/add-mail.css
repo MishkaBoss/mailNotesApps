@@ -1,0 +1,78 @@
+.add-mail{
+    position: absolute;
+    background-color: white;
+    bottom: 0;
+    right: 1em;
+    width: 20em;
+    height: 25em;
+    border-top-left-radius: .6em;
+    border-top-right-radius: .6em;
+}
+
+.add-mail .add-header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(56, 55, 55);
+    padding: .5em;
+    color: white;
+    border-top-left-radius: .6em;
+    border-top-right-radius: .6em;
+    font-size: .9em;
+}
+
+.add-mail{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-mail .add-header button{
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 0;
+    cursor: pointer;
+}
+
+.add-mail .add-tittels{
+    padding: 0 .5em;
+}
+
+.add-mail .add-tittels input{
+   border: 0;
+}
+
+/* .add-mail .add-to{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding: .5em 0;
+} */
+
+.add-mail .add-subject, .add-to, .add-to-addres{
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    padding: .5em 0;
+}
+
+.add-mail .add-body{
+    padding: .5em;
+    flex-grow: 1;
+}
+
+.add-mail .add-body input{
+    border: 0;
+    height: 2em;
+    width: 100%;
+}
+
+.add-mail .add-foter{
+    padding: .5em;
+    background-color: aliceblue;
+}
+
+.add-mail .add-foter button{
+    background-color: rgb(41, 118, 243);
+    color: white;
+    border: 0;
+    border-radius: .2em;
+    padding: .5em .7em;
+    cursor: pointer;
+}

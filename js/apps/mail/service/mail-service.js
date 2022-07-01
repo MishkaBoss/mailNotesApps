@@ -10,7 +10,8 @@ export const mailService = {
     save,
     getEmptyMail,
     get,
-    getNextMailId
+    getNextMailId,
+    getPreviousMailId
 };
 
 function query() {
@@ -39,11 +40,24 @@ function getNextMailId(mailId) {
         })
 }
 
+function getPreviousMailId(mailId) {
+    return storageService.query(MAIL_KEY)
+        .then(mails => {
+            const idx = mails.findIndex(mail => mail.id === mailId)
+            return (idx !== 0) ? mails[idx - 1].id : mails[mails.length - 1].id
+        })
+}
+
 function getEmptyMail() {
     return {
         id: '',
-        vendor: '',
-        maxSpeed: 0
+        fullName: '',
+        subject: '',
+        body: '',
+        isFavored: false,
+        isRead: false,
+        sentAt: Date.now(),
+        to,
     };
 }
 
@@ -66,8 +80,9 @@ function _createMail(fullName, subject, body, to) {
         fullName,
         subject,
         body,
+        isFavored: false,
         isRead: false,
-        sentAt: new Date(),
+        sentAt: Date.now(),
         to,
     };
     return mail;

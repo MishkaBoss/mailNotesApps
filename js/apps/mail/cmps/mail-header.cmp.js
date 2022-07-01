@@ -14,7 +14,7 @@ export default {
     },
     methods: {
         filter(){
-            this.$emit('filtered', this.txt)
+            this.$emit('filtered', 'txt' ,this.txt)
         }
     },
 }
