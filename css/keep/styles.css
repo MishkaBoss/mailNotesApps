@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.note-list {
+  background-color: beige;
+  display: flex;
+}
+
+.note-list ul {
+  list-style: none;
+  padding: 0;
+}

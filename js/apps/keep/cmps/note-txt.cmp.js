@@ -1,7 +1,11 @@
 export default {
     template: `
-<h1>note txt</h1>
+<div class="txt-note">
+<h1>txt</h1>
+</div>
+
 `,
+    props: ['note'],
     data() {
         return {
 

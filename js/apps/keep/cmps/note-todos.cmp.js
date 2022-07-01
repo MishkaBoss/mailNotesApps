@@ -1,6 +1,13 @@
 export default {
     template: `
-<h1>note todos</h1>
+<div class="todos-note">
+    <h3 class="note-header">This is txt note header</h3>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
 `,
     data() {
         return {

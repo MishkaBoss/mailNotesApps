@@ -1,13 +1,22 @@
 export default {
     template: `
-<h1>note img</h1>
+<div class="img-note">
+    <pre>{{note}}</pre>
+    <img src="" alt="">
+    <p class="txt-note-body">this is img note body</p>
+</div>
 `,
+    props: ['note'],
     data() {
         return {
+
         }
     },
     methods: {
     },
     computed: {
     },
+    created() {
+
+    }
 }

@@ -1,6 +1,8 @@
 export default {
     template: `
-<h1>note video</h1>
+<div class="video-note">
+    <video src=""></video>
+</div>
 `,
     data() {
         return {
