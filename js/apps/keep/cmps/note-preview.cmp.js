@@ -3,83 +3,61 @@ import noteList from "./note-list.cmp.js";
 import noteTxt from "/js/apps/keep/cmps/note-txt.cmp.js"
 import addTxtNote from "/js/apps/keep/cmps/add-txt-note.cmp.js"
 import noteImg from "/js/apps/keep/cmps/note-img.cmp.js"
-import noteVideo from "/js/apps/keep/cmps/note-video.cmp.js"
 import noteTodos from "/js/apps/keep/cmps/note-todos.cmp.js"
+import addImgNote from "/js/apps/keep/cmps/add-img-note.cmp.js"
+import addTodosNote from "/js/apps/keep/cmps/add-todos-note.cmp.js"
+import searchCmp from "/js/apps/keep/cmps/search.cmp.js";
 
 
 export default {
     prop: ['notes'],
     template: `
 
-<!-- <pre>{{notes}}</pre> -->
+<!-- <add-img-note @saved="addTxtNote" :notes="notes"/>
+<add-todos-note @saved="addTxtNote" :notes="notes"/> -->
+<search-cmp :note="note"></search-cmp>
 <section class="note-list">
-    <!-- <pre>{{notes}}</pre> -->
-    <ul>
-        <li v-for="note in notes" :key="note.id">
-            <note-list :note="note"/>
-            
-        </li>
-    </ul>
+        <div v-for="note in notes" :key="note.id" class="note-item">
+            <note-list :note="note" @remove="removeNote"/>
+        </div>
 </section>
-<add-txt-note @saved="addTxtNote" :notes="notes"/>
-<!-- <button v-on:click="changeToImgNote">change to img</button>
-<button v-on:click="changeToTodoNote">change to todos</button>
-    <component :is="noteType"  
-    :note="note" >
-</component> -->
 `,
-
+    emits: ['saved'],
     data() {
         return {
             notes: null,
-            noteType: 'note-txt',
-            heading: 'h2',
             // note: this.notes
 
         }
     },
     methods: {
-
-        // changeToImgNote() {
-        //     this.noteType = 'note-img'
-        //     console.log(`button`);
-        //     console.log(this.noteType);
-        //     this.note = this.notes.find(note => note.type === this.noteType)
+        // addTxtNote(note) {
+        //     this.notes.push(note)
+        //     console.log(`addTxtNote happened`);
         // },
-        // changeToTodoNote() {
-        //     this.noteType = 'note-todos'
-        //     console.log(`button`);
-        //     console.log(this.noteType);
-        //     this.note = this.notes.find(note => note.type === this.noteType)
-        // },
-        addTxtNote(note) {
-            this.notes.push(note)
-
-            console.log(`addTxtNote happened`);
-        },
+        removeNote(id) {
+            noteService.remove(id)
+                .then(() => {
+                    const idx = this.notes.findIndex((note) => note.id === id)
+                    this.notes.splice(idx, 1)
+                })
+        }
     },
     components: {
 
         noteTxt,
         addTxtNote,
         noteImg,
-        noteVideo,
+        addImgNote,
+        addTodosNote,
         noteTodos,
         noteList,
+        searchCmp
     },
     created() {
-        // noteService.getById()
-        //     .then(notes => {
-        //         this.notes = notes
-        //         this.note = notes
-        //     }),
         noteService.query()
             .then(notes => this.notes = notes)
         console.log(`hello from note-app`);
-
         console.log(`hi`);
-
-
-
     }
 }

@@ -3,21 +3,29 @@ import { noteService } from "/js/apps/keep/service/note-service.js"
 export default {
     template: `
     <form @submit.prevent="save">
-    <input type="text" placeholder="insert text" v-model="noteToAdd.info.txt">
+    <input type="text" placeholder="insert comma separated todos" v-model="noteToAdd.info.todos" :todos="todos">
     <button class="add-note-btn save">save</button>
     </form>
 `,
-    props: ['notes'],
+    props: ['notes', 'todos'],
     data() {
         return {
             noteToAdd: noteService.getEmptyNote(),
-            noteType: 'note-txt',
+            todos: null,
+            noteType: 'todos-note'
+
         }
     },
     methods: {
         save() {
             console.log(`hi`);
-            if (!this.noteToAdd.info.txt) return
+            let splitStr = this.noteToAdd.info.todos.split(',')
+            console.log(splitStr);
+            this.todos = splitStr
+            console.log(this.todos);
+            this.noteToAdd.info.todos = this.todos
+            console.log(this.noteToAdd.info.todos);
+            if (!this.noteToAdd.info.todos) return
             const note = noteService.save(this.noteToAdd)
             console.log(note);
             this.noteToAdd.type = this.noteType
@@ -25,6 +33,9 @@ export default {
             this.noteToAdd = noteService.getEmptyNote()
             console.log(`emit: saved`);
         },
+        splitString() {
+
+        }
     },
     computed: {
     },

@@ -7,10 +7,7 @@ import { noteService } from '../service/note-service.js'
 
 export default {
     template: `
-  <h1>from note-preview</h1>
 <note-preview :notes="notes"/>
-<h1>from note-app</h1>
-<pre>{{notes}}</pre>
       `,
     data() {
         return {

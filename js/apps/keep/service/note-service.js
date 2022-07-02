@@ -8,10 +8,15 @@ export const noteService = {
     query,
     getById,
     getEmptyNote,
-    save
+    save,
+    remove
 }
 function query() {
     return storageService.query(NOTES_KEY)
+}
+function remove(noteId) {
+    // return Promise.reject('Big Error Badd')
+    return storageService.remove(NOTES_KEY, noteId)
 }
 function getById() {
     return Promise.resolve(notes)
@@ -30,7 +35,7 @@ var notes =
             id: "n102",
             type: "note-img",
             info: {
-                url: "http://some-img/me",
+                url: "https://www.abc.net.au/news/science/2022-04-06/dog-human-communication-puppy-dog-eyes-facial-expression/100955364",
                 title: "Bobi and Me"
             },
             style: {
@@ -97,7 +102,7 @@ function getDemoNotes() {
             id: "n102",
             type: "note-img",
             info: {
-                url: "http://some-img/me",
+                url: "https://images.unsplash.com/photo-1656608138197-2aea23cc3564?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=500&q=60",
                 title: "Bobi and Me"
             },
             style: {
@@ -110,8 +115,8 @@ function getDemoNotes() {
             info: {
                 label: "Get my stuff together",
                 todos: [
-                    { txt: "Driving liscence", doneAt: null },
-                    { txt: "Coding power", doneAt: 187111111 }
+                    "Driving liscence",
+                    "Coding power"
                 ]
             }
         }
